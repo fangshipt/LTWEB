@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.jsp.jstl.sql.Result"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="vn.iotstar.DBConnect"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="vn.iotstar.service.IUserService"/>
+    <fullyQualifiedTypeName name="vn.iotstar.dao.IUserDao"/>
+    <fullyQualifiedTypeName name="vn.iotstar.dao.impl.UserDaoImpl"/>
+    <fullyQualifiedTypeName name="vn.iotstar.model.UserModel"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServlet"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.annotation.WebServlet"/>
+</qualifiedTypeNameHistroy>
