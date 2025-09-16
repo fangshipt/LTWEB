@@ -54,3 +54,10 @@
 0:0:0:0:0:0:0:1 - - [17/Sep/2025:03:47:59 +0700] "POST /ShoppingServletService/login HTTP/1.1" 302 -
 0:0:0:0:0:0:0:1 - - [17/Sep/2025:03:47:59 +0700] "GET /ShoppingServletService/waiting HTTP/1.1" 302 -
 0:0:0:0:0:0:0:1 - - [17/Sep/2025:03:47:59 +0700] "GET /ShoppingServletService/admin/home HTTP/1.1" 404 715
+127.0.0.1 - - [17/Sep/2025:03:58:26 +0700] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [17/Sep/2025:03:58:26 +0700] "GET /ShoppingServletService/servlet/vn.iotstar.controller.admin.HomeController HTTP/1.1" 404 755
+0:0:0:0:0:0:0:1 - - [17/Sep/2025:03:59:00 +0700] "GET /ShoppingServletService/login HTTP/1.1" 200 831
+0:0:0:0:0:0:0:1 - - [17/Sep/2025:03:59:00 +0700] "GET /favicon.ico HTTP/1.1" 404 763
+0:0:0:0:0:0:0:1 - - [17/Sep/2025:03:59:10 +0700] "POST /ShoppingServletService/login HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [17/Sep/2025:03:59:10 +0700] "GET /ShoppingServletService/waiting HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [17/Sep/2025:03:59:11 +0700] "GET /ShoppingServletService/admin/home HTTP/1.1" 200 150
