@@ -1,5 +1,7 @@
 package vn.iotstar.service.impl;
 
+import java.sql.Date;
+
 import vn.iotstar.dao.IUserDao;
 import vn.iotstar.dao.impl.UserDaoImpl;
 import vn.iotstar.model.UserModel;
@@ -21,5 +23,64 @@ public class UserService implements IUserService {
 	@Override
 	public UserModel FindByUserName(String username) {
 		return userDao.findByUserName(username);
+	}
+
+	// ====== Các hàm mới cho đăng ký ======
+	@Override
+	public boolean register(String username, String password, String email, String fullname, String phone) {
+
+		// Nếu username đã tồn tại thì fail
+		if (userDao.checkExistUsername(username)) {
+			return false;
+		}
+		try {
+	        long millis = System.currentTimeMillis();
+	        Date currentDate = new Date(millis);
+	        UserModel newUser = new UserModel();
+	        newUser.setUsername(username);
+	        newUser.setPassword(password);
+	        newUser.setEmail(email);
+	        newUser.setFullname(fullname);
+	        newUser.setPhone(phone);
+	        newUser.setAvatar(null);
+	        newUser.setRoleid(1); 
+	        newUser.setCreateDate(currentDate);
+
+	        userDao.insert(newUser);
+	        return true;
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return false;
+	    }
+		/*
+		// Chuẩn bị user mới
+		long millis = System.currentTimeMillis();
+		Date currentDate = new Date(millis);
+		UserModel newUser = new UserModel();
+		newUser.setUsername(username);
+		newUser.setPassword(password);
+		newUser.setEmail(email);
+		newUser.setFullname(fullname);
+		newUser.setPhone(phone);
+		newUser.setAvatar(null); 
+		newUser.setRoleid(1); 
+		newUser.setCreateDate(currentDate);
+
+		userDao.insert(newUser);
+		return true;
+		*/
+	}
+	@Override
+	public boolean checkExistEmail(String email) {
+		return userDao.checkExistEmail(email);
+	}
+	@Override
+	public boolean checkExistUsername(String username) {
+		return userDao.checkExistUsername(username);
+	}
+
+	@Override
+	public boolean checkExistPhone(String phone) {
+		return userDao.checkExistPhone(phone);
 	}
 }

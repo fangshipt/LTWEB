@@ -61,3 +61,11 @@
 0:0:0:0:0:0:0:1 - - [17/Sep/2025:03:59:10 +0700] "POST /ShoppingServletService/login HTTP/1.1" 302 -
 0:0:0:0:0:0:0:1 - - [17/Sep/2025:03:59:10 +0700] "GET /ShoppingServletService/waiting HTTP/1.1" 302 -
 0:0:0:0:0:0:0:1 - - [17/Sep/2025:03:59:11 +0700] "GET /ShoppingServletService/admin/home HTTP/1.1" 200 150
+127.0.0.1 - - [17/Sep/2025:05:04:32 +0700] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [17/Sep/2025:05:04:33 +0700] "GET /ShoppingServletService/login HTTP/1.1" 200 831
+127.0.0.1 - - [17/Sep/2025:05:16:04 +0700] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [17/Sep/2025:05:16:05 +0700] "GET /ShoppingServletService/views/register.jsp HTTP/1.1" 200 1156
+0:0:0:0:0:0:0:1 - - [17/Sep/2025:05:16:53 +0700] "GET /ShoppingServletService/views/register.jsp HTTP/1.1" 200 513
+0:0:0:0:0:0:0:1 - - [17/Sep/2025:05:17:11 +0700] "GET /ShoppingServletService/views/register.jsp HTTP/1.1" 200 1156
+0:0:0:0:0:0:0:1 - - [17/Sep/2025:05:21:00 +0700] "GET /ShoppingServletService/views/login.jsp HTTP/1.1" 200 506
+0:0:0:0:0:0:0:1 - - [17/Sep/2025:05:21:15 +0700] "GET /ShoppingServletService/views/login.jsp HTTP/1.1" 200 831
