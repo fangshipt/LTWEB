@@ -1,3 +1,1 @@
 INDEX VERSION 1.134
-file:/D:/Downloads/LTWEB-main/LTWEB-main/.metadata/.plugins/org.eclipse.jdt.core/1865797976.index
-meta_index

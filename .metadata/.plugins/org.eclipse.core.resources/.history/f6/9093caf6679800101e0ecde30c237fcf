@@ -1,0 +1,9 @@
+package vn.iotstar.controller.admin;
+
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+@WebServlet(urlPatterns = {"/admin/categories"})
+public class CategoryController extends HttpServlet{
+	private static final long serialVersionUID = 1L;
+
+}

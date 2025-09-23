@@ -8,7 +8,7 @@ import java.util.List;
 
 import vn.iotstar.DBConnect;
 import vn.iotstar.dao.ICategoryDao;
-import vn.iotstar.model.Category;
+import vn.iotstar.model.CategoryModel;
 
 public class CategoryDaoImpl implements ICategoryDao {
 	public Connection conn = null;
@@ -16,133 +16,131 @@ public class CategoryDaoImpl implements ICategoryDao {
 	public ResultSet rs = null;
 
 	@Override
-	public void insert(Category category) {
-		// TODO Auto-generated method stub
-		String sql = "INSERT INTO category(cate_name,icon) VALUES (?,?)";
+	public List<CategoryModel> findAll() {
+		String sql = "select * from categories";
+		List<CategoryModel> list = new ArrayList<>();
 		try {
 			conn = new DBConnect().getConnection();
-			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1, category.getCatename());
-			ps.setString(2, category.getIcon());
-			ps.executeUpdate();
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				CategoryModel category = new CategoryModel();
+				category.setCategoryid(rs.getInt("categoryid"));
+				category.setCategoryname(rs.getString("categoryname"));
+				category.setImages(rs.getString("images"));
+				category.setStatus(rs.getInt("status"));
+				list.add(category);
+			}
+			conn.close();
+			ps.close();
+			rs.close();
+			return list;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
+		return null;
 	}
 
 	@Override
-	public void edit(Category category) {
-		String sql = "UPDATE category SET cate_name = ?, icon=? WHERE cate_id = ?";
+	public CategoryModel findById(int id) {
+		String sql = "select * from categories where categoryid = ?";
 		try {
 			conn = new DBConnect().getConnection();
-			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1, category.getCatename());
-			ps.setString(2, category.getIcon());
-			ps.setInt(3, category.getCateid());
-			ps.executeUpdate();
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, id);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				CategoryModel category = new CategoryModel();
+				category.setCategoryid(rs.getInt("categoryid"));
+				category.setCategoryname(rs.getString("categoryname"));
+				category.setImages(rs.getString("images"));
+				category.setStatus(rs.getInt("status"));
+				return category;
+			}
+			conn.close();
+			ps.close();
+			rs.close();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public void insert(CategoryModel category) {
+		String sql = "insert into categories(categoryname, images, status) values (?,?,?)";
+		try {
+			conn = new DBConnect().getConnection();
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, category.getCategoryname());
+			ps.setString(2, category.getImages());
+			ps.setInt(3, category.getStatus());
+			ps.executeQuery();
+			conn.close();
+			ps.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void update(CategoryModel category) {
+		String sql = "UPDATE categories SET categoryname = ?, images=?, status = ? WHERE categoryid = ?";
+		try {
+			conn = new DBConnect().getConnection();
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, category.getCategoryname());
+			ps.setString(2, category.getImages());
+			ps.setInt(3, category.getStatus());
+			ps.setInt(4, category.getCategoryid());
+			ps.executeQuery();
+			conn.close();
+			ps.close();
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
 	@Override
 	public void delete(int id) {
-		String sql = "DELETE FROM category WHERE cate_id = ?";
+		String sql = "DELETE FROM categories WHERE categoryid = ?";
 		try {
 			conn = new DBConnect().getConnection();
-			PreparedStatement ps = conn.prepareStatement(sql);
+			ps = conn.prepareStatement(sql);
 			ps.setInt(1, id);
-			ps.executeUpdate();
+			ps.executeQuery();
+			conn.close();
+			ps.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
 	@Override
-	public Category get(int id) {
-		String sql = "SELECT * FROM category WHERE cate_id = ? ";
+	public List<CategoryModel> findName(String keyword) {
+		String sql = "select * from categories where categoryname like ?";
+		List<CategoryModel> list = new ArrayList<>();
 		try {
 			conn = new DBConnect().getConnection();
-			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setInt(1, id);
-			ResultSet rs = ps.executeQuery();
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, "%" + keyword + "%" );
+			rs = ps.executeQuery();
 			while (rs.next()) {
-				Category category = new Category();
-				category.setCateid(rs.getInt("cate_id"));
-				category.setCatename(rs.getString("cate_name"));
-				category.setIcon(rs.getString("icon"));
-				return category;
+				CategoryModel category = new CategoryModel();
+				category.setCategoryid(rs.getInt("categoryid"));
+				category.setCategoryname(rs.getString("categoryname"));
+				category.setImages(rs.getString("images"));
+				category.setStatus(rs.getInt("status"));
+				list.add(category);
 			}
+			conn.close();
+			ps.close();
+			rs.close();
+			return list;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;
-	}
-
-	@Override
-	public Category get(String name) {
-		String sql = "SELECT * FROM category WHERE cate_name = ? ";
-		try {
-			conn = new DBConnect().getConnection();
-			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1, name);
-			ResultSet rs = ps.executeQuery();
-			while (rs.next()) {
-				Category category = new Category();
-				category.setCateid(rs.getInt("cate_id"));
-				category.setCatename(rs.getString("cate_name"));
-				category.setIcon(rs.getString("icon"));
-				return category;
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-
-	@Override
-	public List<Category> getAll() {
-		List<Category> categories = new ArrayList<Category>();
-		String sql = "SELECT * FROM Category";
-		try {
-			conn = new DBConnect().getConnection();
-			PreparedStatement ps = conn.prepareStatement(sql);
-			ResultSet rs = ps.executeQuery();
-			while (rs.next()) {
-				Category category = new Category();
-				category.setCateid(rs.getInt("cate_id"));
-				category.setCatename(rs.getString("cate_name"));
-				category.setIcon(rs.getString("icon"));
-				categories.add(category);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return categories;
-	}
-
-	@Override
-	public List<Category> search(String keyword) {
-		List<Category> categories = new ArrayList<>();
-		String sql = "SELECT * FROM Category WHERE cate_name LIKE ?";
-		try {
-			conn = new DBConnect().getConnection();
-			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1, "%" + keyword + "%"); // tìm gần đúng
-			ResultSet rs = ps.executeQuery();
-			while (rs.next()) {
-				Category category = new Category();
-				category.setCateid(rs.getInt("cate_id"));
-				category.setCatename(rs.getString("cate_name"));
-				category.setIcon(rs.getString("icon"));
-				categories.add(category);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return categories;
 	}
 
 }

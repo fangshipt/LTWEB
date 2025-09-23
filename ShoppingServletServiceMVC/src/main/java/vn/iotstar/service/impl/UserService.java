@@ -52,23 +52,6 @@ public class UserService implements IUserService {
 	        e.printStackTrace();
 	        return false;
 	    }
-		/*
-		// Chuẩn bị user mới
-		long millis = System.currentTimeMillis();
-		Date currentDate = new Date(millis);
-		UserModel newUser = new UserModel();
-		newUser.setUsername(username);
-		newUser.setPassword(password);
-		newUser.setEmail(email);
-		newUser.setFullname(fullname);
-		newUser.setPhone(phone);
-		newUser.setAvatar(null); 
-		newUser.setRoleid(1); 
-		newUser.setCreateDate(currentDate);
-
-		userDao.insert(newUser);
-		return true;
-		*/
 	}
 	@Override
 	public boolean checkExistEmail(String email) {
