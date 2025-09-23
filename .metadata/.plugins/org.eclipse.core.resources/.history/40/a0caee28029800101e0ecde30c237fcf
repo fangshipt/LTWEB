@@ -1,0 +1,12 @@
+package vn.iotstar.controller;
+
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import vn.iotstar.service.ICategoryService;
+import vn.iotstar.service.impl.CategoryServiceImpl;
+
+@WebServlet(urlPatterns = { "/admin/category/edit" })
+public class CategoryEditController extends HttpServlet{
+	ICategoryService cateService = new CategoryServiceImpl();
+	
+}

@@ -1,0 +1,10 @@
+127.0.0.1 - - [23/Sep/2025:02:24:49 +0700] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [23/Sep/2025:02:24:50 +0700] "GET /ShoppingServletService/waiting HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [23/Sep/2025:02:24:50 +0700] "GET /ShoppingServletService/login HTTP/1.1" 200 800
+0:0:0:0:0:0:0:1 - - [23/Sep/2025:02:24:50 +0700] "GET /favicon.ico HTTP/1.1" 404 685
+127.0.0.1 - - [23/Sep/2025:02:27:45 +0700] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [23/Sep/2025:02:27:46 +0700] "GET /ShoppingServletService/views/home.jsp HTTP/1.1" 200 149
+0:0:0:0:0:0:0:1 - - [23/Sep/2025:02:27:46 +0700] "GET /favicon.ico HTTP/1.1" 404 685
+127.0.0.1 - - [23/Sep/2025:03:51:24 +0700] "GET / HTTP/1.1" 404 752
+0:0:0:0:0:0:0:1 - - [23/Sep/2025:03:51:24 +0700] "GET /ShoppingServletService/WEB-INF/NewFile.xml HTTP/1.1" 404 683
+0:0:0:0:0:0:0:1 - - [23/Sep/2025:03:51:24 +0700] "GET /favicon.ico HTTP/1.1" 404 763

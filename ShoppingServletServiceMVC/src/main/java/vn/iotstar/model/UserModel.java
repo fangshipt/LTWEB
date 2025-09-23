@@ -14,6 +14,9 @@ public class UserModel implements Serializable{
 	private String email;
 	private String phone;
 	private int roleid;
+	private String code;
+	
+
 	private Date createDate;
 	
 	public UserModel() {
@@ -103,6 +106,29 @@ public class UserModel implements Serializable{
 	}
 
 	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public UserModel(int id, String username, String password, String fullname, String avatar, String email,
+			String phone, int roleid, String code, Date createDate) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.fullname = fullname;
+		this.avatar = avatar;
+		this.email = email;
+		this.phone = phone;
+		this.roleid = roleid;
+		this.code = code;
 		this.createDate = createDate;
 	}
 

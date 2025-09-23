@@ -190,4 +190,39 @@ public class UserDaoImpl /* extends DBConnect */ implements IUserDao {
 			e.printStackTrace();
 		}
 	}
+
+	@Override
+	public boolean matchUsernameEmail(String username, String email) {
+		String sql = "SELECT 1 FROM [User] WHERE username = ? AND email = ?";
+	    try {
+	        conn = new DBConnect().getConnection();
+	        ps = conn.prepareStatement(sql);
+	        ps.setString(1, username);
+	        ps.setString(2, email);
+	        rs = ps.executeQuery();
+	        return rs.next();
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    } finally {
+	        try { if (rs != null) rs.close(); if (ps != null) ps.close(); if (conn != null) conn.close(); } catch (Exception ex) { ex.printStackTrace(); }
+	    }
+	    return false;
+	}
+
+	@Override
+	public int updatePasswordByUsername(String username, String newPassword) {
+		 String sql = "UPDATE [User] SET password = ? WHERE username = ?";
+		    try {
+		        conn = new vn.iotstar.DBConnect().getConnection();
+		        ps = conn.prepareStatement(sql);
+		        ps.setString(1, newPassword); 
+		        ps.setString(2, username);
+		        return ps.executeUpdate();
+		    } catch (Exception e) {
+		        e.printStackTrace();
+		    } finally {
+		        try { if (ps != null) ps.close(); if (conn != null) conn.close(); } catch (Exception ex) { ex.printStackTrace(); }
+		    }
+		    return 0;
+	}
 }

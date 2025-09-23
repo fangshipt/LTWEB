@@ -7,11 +7,13 @@ public class Constant {
     // Cookie keys
     public static final String COOKIE_REMEMBER = "remember_me";
 
+    public static final String DIR = "E:\\WEB\\ShoppingServletServiceMVC\\upload";
     // Path JSP
     public static class Path {
         public static final String REGISTER = "/views/register.jsp";
         public static final String LOGIN = "/views/login.jsp";
         public static final String HOME = "/views/home.jsp";
+        public static final String FORGOT   = "/views/forgot.jsp";
     }
 }
 

@@ -83,4 +83,15 @@ public class UserService implements IUserService {
 	public boolean checkExistPhone(String phone) {
 		return userDao.checkExistPhone(phone);
 	}
+
+	@Override
+	public boolean matchUsernameEmail(String username, String email) {
+		return userDao.matchUsernameEmail(username, email);
+	}
+
+	@Override
+	public boolean resetPassword(String username, String newPassword) {
+		int updated = userDao.updatePasswordByUsername(username, newPassword);
+	    return updated > 0;
+	}
 }

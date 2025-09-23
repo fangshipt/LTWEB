@@ -4,8 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Trang chủ User</title>
 </head>
-<body>Trang chủ của User!
+<body>
+	Trang chủ của User!
+	<%-- Hiển thị khi đã login --%>
+	<br>
+	<a href="${pageContext.request.contextPath}/logout">Đăng xuất</a>
 </body>
 </html>
