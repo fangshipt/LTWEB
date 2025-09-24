@@ -142,7 +142,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="E:\WEB\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="E:\WEB\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Chuong2" path="/HelloWorld" reloadable="true" source="org.eclipse.jst.jee.server:Chuong2"/><Context docBase="E:\WEB\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ShoppingServletServiceMVC" path="/ShoppingServletService" reloadable="true" source="org.eclipse.jst.jee.server:ShoppingServletServiceMVC"/></Host>
+      <Context docBase="E:\WEB\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="E:\WEB\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Chuong2" path="/HelloWorld" reloadable="true" source="org.eclipse.jst.jee.server:Chuong2"/><Context docBase="E:\WEB\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ShoppingServletServiceMVC" path="/ShoppingServletService" reloadable="true" source="org.eclipse.jst.jee.server:ShoppingServletServiceMVC"/><Context docBase="E:\WEB\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Sitemesh" path="/Sitemesh" reloadable="true" source="org.eclipse.jst.jee.server:Sitemesh"/></Host>
     </Engine>
   </Service>
 </Server>

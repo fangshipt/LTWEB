@@ -52,6 +52,7 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="Sitemesh"/>
 			<item value="ShoppingServletServiceMVC"/>
 			<item value="ShoppingServletServiceMCV"/>
 		</list>
@@ -64,8 +65,8 @@
 			<item value="[name]"/>
 		</list>
 		<list key="version">
-			<item value="1.0.0"/>
 			<item value="1.1.0"/>
+			<item value="1.0.0"/>
 			<item value="0.0.1-SNAPSHOT"/>
 		</list>
 	</section>
