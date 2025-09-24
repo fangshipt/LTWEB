@@ -6,17 +6,28 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value=""/>
+		<item key="selection" value="Header END"/>
 		<list key="findhistory">
+			<item value="Header END"/>
+			<item value="Header"/>
+			<item value="../.."/>
+			<item value="color-gray"/>
+			<item value="COLER_GRAY"/>
+			<item value="BEGIN TOP BAR"/>
+			<item value="../../"/>
+			<item value="site"/>
+			<item value="jakarta.servlet.jsp.jstl"/>
+			<item value="jakarta.servlet.jsp.jstl-api"/>
 			<item value="insert"/>
 			<item value="&#x09;"/>
 		</list>
 		<list key="replacehistory">
+			<item value="${URL}"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="544"/>
-		<item key="DIALOG_Y_ORIGIN" value="141"/>
+		<item key="DIALOG_X_ORIGIN" value="941"/>
+		<item key="DIALOG_Y_ORIGIN" value="63"/>
 		<item key="DIALOG_WIDTH" value="364"/>
 		<item key="DIALOG_HEIGHT" value="370"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-24|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>

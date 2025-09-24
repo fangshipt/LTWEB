@@ -1,0 +1,25 @@
+{
+  "name": "nouislider",
+  "version": "6.1.0",
+  "description": "A lightweight, highly customizable range slider without bloat.",
+  "keywords": [
+    "range",
+    "slider",
+    "form",
+    "input",
+    "serialize",
+    "handle"
+  ],
+  "license": "WTFPL",
+  "author": {
+    "name": "Léon Gersen",
+    "url": "https://twitter.com/LeonGersen"
+  },
+  "bugs": {
+    "url": "https://github.com/leongersen/noUiSlider/issues"
+  },
+  "homepage": "http://refreshless.com/nouislider/",
+  "dependencies": {
+    "jquery": ">=1.7"
+  }
+}
