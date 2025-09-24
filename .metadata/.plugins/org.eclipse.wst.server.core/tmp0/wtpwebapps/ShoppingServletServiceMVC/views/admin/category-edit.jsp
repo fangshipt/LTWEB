@@ -3,17 +3,14 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
 
 <form action="${pageContext.request.contextPath }/admin/category/update"
-	method="post">
- <input
-		type="text" id="categoryid" name="categoryid"
-		value="${cate.categoryid }" hidden="hidden"><br> 
-	<label for="categoryname">Category name:</label><br> <input
-		type="text" id="categoryname" name="categoryname"
-		value="${cate.categoryname }"><br> 
-		
-		
-		<label for="images">Images:</label>
-	<br>
+	method="post" enctype="multipart/form-data">
+	<input type="text" id="categoryid" name="categoryid"
+		value="${cate.categoryid }" hidden="hidden"><br> <label
+		for="categoryname">Category name:</label><br> <input type="text"
+		id="categoryname" name="categoryname" value="${cate.categoryname }"><br>
+
+
+	<label for="images">Images:</label> <br>
 	<c:if test="${cate.images.substring(0,5) != 'https'}">
 		<c:url value="/image?fname=${cate.images}" var="imgUrl" />
 	</c:if>
